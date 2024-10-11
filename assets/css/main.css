@@ -1971,13 +1971,20 @@ button,
 	text-decoration: none;
 	border: 0;
 	cursor: pointer;
-	transition: all 0.2s ease-in-out;
-	animation: upUp 1s infinite;
+	/* transition: all 0.2s ease-in-out; */
+	animation: upUp 1s infinite ease-in-out;
 }
 
 @keyframes upUp {
-	to {
+	0% {
+		transform: translateY(0px);
+	}
+
+	50% {
 		transform: translateY(-5px);
+	}
+	100% {
+		transform: translateY(0px);
 	}
 }
 
@@ -2351,7 +2358,7 @@ button:active,
 
 #main>section.dark .topFlowers p.flower01 {
 	overflow: hidden;
-	width: 420px;
+	width: 380px;
 	height: 410px;
 	border-radius: 50%;
 	animation: flowerRotate01 7s infinite ease-in-out;

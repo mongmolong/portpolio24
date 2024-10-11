@@ -7,14 +7,23 @@
 	display: inline-block;
 }
 
-#top:hover .container .top_twinkle {
-	animation: twinkle01 2s infinite;
-	transform: translateY(-5px);
+#top .container .top_twinkle {
+	animation: twinkle01 3s infinite ease-in-out;
+	/* transition: all 0.5s; */
 }
 
 @keyframes twinkle01 {
+	0% {
+		color: #0a0a0aaf;
+		transform: rotate(-5deg);
+	}
 	50% {
-		color: #f6f2f2af;
+		color: #0a0a0aaf;
+		transform: rotate(5deg);
+	}
+	100% {
+		color: #0a0a0aaf;
+		transform: rotate(-5deg);
 	}
 }
 
@@ -45,7 +54,7 @@
 
 /* -----topUp------------------------------- */
 #top .container .topSpan01 {
-	animation: topUp01 5s infinite;
+	animation: topUp01 3s infinite;
 }
 
 @keyframes topUp01 {
@@ -59,7 +68,7 @@
 }
 
 #top .container .topSpan02 {
-	animation: topUp02 5s infinite;
+	animation: topUp02 3s infinite;
 }
 
 @keyframes topUp02 {
@@ -73,7 +82,7 @@
 }
 
 #top .container .topSpan03 {
-	animation: topUp03 5s infinite;
+	animation: topUp03 3s infinite;
 }
 
 @keyframes topUp03 {
@@ -87,7 +96,7 @@
 }
 
 #top .container .topSpan04 {
-	animation: topUp04 5s infinite;
+	animation: topUp04 3s infinite;
 }
 
 @keyframes topUp04 {
@@ -320,7 +329,7 @@
 	transform: translateX(0);
 }
 
-/* forFlower---------------- */
+/* forFlower--------오렌지-------- */
 #flowerCutTop {
 	position: absolute;
 	z-index: 2;
@@ -335,7 +344,6 @@
 }
 
 #forFlower .topFlowers02 {
-	/* .container .topFlowers02 { */
 	position: absolute;
 	right: -80%;
 	top: 300px;
@@ -361,7 +369,6 @@
 }
 
 #forFlower .topFlowers02 .flower02 {
-	/* .container .topFlowers02 .flower02 { */
 	overflow: hidden;
 	width: 390px;
 	height: 360px;
@@ -369,7 +376,6 @@
 }
 
 #forFlower .topFlowers02 .flower02 span {
-	/* .container .topFlowers02 .flower02 span { */
 	display: block;
 	background-image: url(../../images/flowers.png);
 	background-size: cover;
