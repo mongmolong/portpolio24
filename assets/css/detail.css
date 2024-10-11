@@ -1,14 +1,131 @@
+#top .container {
+	color: #1E2023;
+}
+
 #top .container span {
-	transition: all 0.7s;
+	transition: all 1s;
 	display: inline-block;
 }
 
-#top:hover .container span {
-	animation: twinkle 2s alternate;
+#top:hover .container .top_twinkle {
+	animation: twinkle01 2s infinite;
 	transform: translateY(-5px);
 }
 
+@keyframes twinkle01 {
+	50% {
+		color: #f6f2f2af;
+	}
+}
+
+
+#top .container::after,
+#top .container::before {
+	position: absolute;
+	content: "";
+	display: block;
+	width: 5px;
+	height: 80%;
+	background-color: #FFCB3B;
+	z-index: -2;
+}
+
+#top .container::before {
+	top: 0;
+	left: 30px;
+	border-radius: 0 0 10px 10px;
+}
+
+#top .container::after {
+	bottom: 0;
+	right: 30px;
+	border-radius: 10px 10px 0 0;
+}
+
+
+/* -----topUp------------------------------- */
+#top .container .topSpan01 {
+	animation: topUp01 5s infinite;
+}
+
+@keyframes topUp01 {
+	10% {
+		transform: translateY(-5px);
+	}
+
+	30% {
+		transform: translateY(0px);
+	}
+}
+
+#top .container .topSpan02 {
+	animation: topUp02 5s infinite;
+}
+
+@keyframes topUp02 {
+	15% {
+		transform: translateY(-5px);
+	}
+
+	35% {
+		transform: translateY(0px);
+	}
+}
+
+#top .container .topSpan03 {
+	animation: topUp03 5s infinite;
+}
+
+@keyframes topUp03 {
+	20% {
+		transform: translateY(-5px);
+	}
+
+	40% {
+		transform: translateY(0px);
+	}
+}
+
+#top .container .topSpan04 {
+	animation: topUp04 5s infinite;
+}
+
+@keyframes topUp04 {
+	25% {
+		transform: translateY(-5px);
+	}
+
+	45% {
+		transform: translateY(0px);
+	}
+}
+
+
 /* #about_content----------------------- */
+/* ----------about----------------- */
+#about {
+	background-color: #FFFCF2;
+	position: relative;
+
+}
+
+#about .container {
+	z-index: 2;
+	position: relative;
+}
+
+#about::after {
+	position: absolute;
+	content: "";
+	display: block;
+
+	top: 0;
+	right: 30px;
+	width: 5px;
+	height: 100%;
+	background-color: #FFCB3B;
+}
+
 #about_content {
 	text-align: left;
 }
@@ -35,33 +152,18 @@
 
 #about_content .skill_container span {
 	transition: all 0.3s;
-	position: relative;
-	overflow: hidden;
+	cursor: pointer;
 }
-
-/* #about_content .skill_container span::before {
-	content: "";
-	display: block;
-	position: absolute;
-	right: 100%;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	border-bottom: 2px solid rgba(255, 255, 255, 0.94);
-	opacity: 0;
-	transition: all 1s;
-} */
-
-/* #about_content .skill_container span:hover::before {
-	right: -100%;
-	z-index: -1;
-	opacity: 1;
-} */
 
 #about_content .skill_container span:hover {
 	transform: rotate(5deg);
 	margin-top: -2px;
+	color: rgb(71, 69, 69);
+
 }
+
+
+
 
 /* 포트폴리오----------------------------------------- */
 #two_row>div {
@@ -76,21 +178,32 @@
 
 /* article */
 #two_row article {
-	border-radius: 0 50% 0 0;
-	transition: all 0.5s;
+	border-radius: 5px 80px 5px 5px;
 	min-height: 51%;
-	background-color: #fff;
+	background-color: transparent;
+	overflow: hidden;
+	transition: all 0.4s;
 }
 
 #two_row div .item:hover {
-	box-shadow: 10px 10px 40px rgba(222, 222, 222, 0.677);
-	transform: translateY(-2px);
+	background: #fff;
+	box-shadow: 5px 5px 10px rgba(231, 231, 231, 0.375);
+	transform: translateY(-5px);
 }
+
+#two_row div .item:hover header h2 {
+	color: #666 !important;
+}
+
+#two_row div .item:hover header {
+	background-color: transparent;
+}
+
 
 #two_row div .item .img_cut {
 	height: 350px;
 	overflow: hidden;
-	border-radius: 0 25% 0 0;
+	border-radius: 0 80px 0 0;
 }
 
 #two_row div .item .img_cut img {
@@ -98,7 +211,7 @@
 }
 
 #two_row .item:hover .img_cut img {
-	margin-top: -800px;
+	margin-top: -520px;
 }
 
 #two_row .item:hover .img02 img {
@@ -130,21 +243,54 @@
 #gitLink:hover span {
 	transform: translateX(10px);
 	font-style: italic;
+	color: tomato;
+}
+
+#gitLink a {
+	text-decoration: none;
+	list-style: none;
 }
 
 /* always_content -----------------------------------*/
+#always {
+	position: relative;
+	z-index: 1;
+}
+
+#always::after,
+#always::before {
+	position: absolute;
+	content: "";
+	display: block;
+	width: 5px;
+	height: 80%;
+	background-color: #FFCB3B;
+}
+
+#always::before {
+	top: 0;
+	left: 30px;
+	border-radius: 0 0 10px 10px;
+}
+
+#always::after {
+	bottom: 0;
+	right: 30px;
+	border-radius: 10px 10px 0 0;
+}
+
 #always_content .always_container span {
 	transition: all 0.7s;
 	display: inline-block;
 }
 
 #always_content:hover .always_container span {
-	animation: twinkle 2s infinite;
+	animation: twinkle 3s infinite;
 	transform: translateX(-10px);
 }
 
 @keyframes twinkle {
-	to {
+	50% {
 		color: rgb(96, 94, 94);
 	}
 }
@@ -155,7 +301,80 @@
 }
 
 /* ----------bottom------------- */
-#games{
+#games {
 	width: 100%;
 	text-align: center;
+}
+
+
+
+/* ----------box_active------------------------------- */
+.box_active {
+	opacity: 0;
+	transform: translateX(100px);
+	transition: opacity 1.5s ease, transform 0.5s ease;
+}
+
+.box_active.visible {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* forFlower---------------- */
+#flowerCutTop {
+	position: absolute;
+	z-index: 2;
+	overflow: hidden;
+	width: 100%;
+	height: 1100px;
+}
+
+#forFlower {
+	width: 100%;
+	height: 100%;
+}
+
+#forFlower .topFlowers02 {
+	/* .container .topFlowers02 { */
+	position: absolute;
+	right: -80%;
+	top: 300px;
+	width: 100%;
+	height: 100%;
+
+	animation: flowerRotate02 12s infinite ease-in-out;
+}
+
+@keyframes flowerRotate02 {
+	0% {
+		transform: rotate(30deg);
+	}
+
+	50% {
+		transform: rotate(-30deg);
+	}
+
+	100% {
+		transform: rotate(30deg);
+	}
+
+}
+
+#forFlower .topFlowers02 .flower02 {
+	/* .container .topFlowers02 .flower02 { */
+	overflow: hidden;
+	width: 390px;
+	height: 360px;
+	border-radius: 50%;
+}
+
+#forFlower .topFlowers02 .flower02 span {
+	/* .container .topFlowers02 .flower02 span { */
+	display: block;
+	background-image: url(../../images/flowers.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: -800px -90px;
+	width: 1250px;
+	height: 1250px;
 }
