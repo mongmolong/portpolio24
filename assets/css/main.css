@@ -2465,8 +2465,6 @@ button:active,
 	position: absolute;
 	top: 0;
 	left: 0;
-	/* background-color: #5451515f; */
-	/* z-index: -1; */
 }
 
 #main>section.one {
@@ -2477,7 +2475,7 @@ button:active,
 
 
 #main>section.two {
-	background-color: #1E2023;
+	background-color: #1E2023;	
 }
 
 #main>section.two div header h2,
@@ -2864,6 +2862,10 @@ button:active,
 		padding: 0 1em;
 	}
 
+
+	.typing-demo{
+		display: none;
+	}
 	/* article */
 	#two_row article {
 		border-radius: 0;
@@ -2878,8 +2880,6 @@ button:active,
 		display: block;
 		font-size: 0.9rem;
 	}
-
-
 
 	#about_content .skill_container {
 		gap: 0 !important;

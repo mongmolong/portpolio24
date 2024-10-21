@@ -1,36 +1,4 @@
-.wrapper {
-  /* height: 100vh; */
-  /*This part is important for centering*/
-  display: grid;
-  place-items: center;
-}
 
-.typing-demo {
-  width: 30ch;
-  animation: typing 5s steps(30), blink .5s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-  font-family: monospa/ce;
-  font-size: 2em;
-}
-
-@keyframes typing {
-  from {
-    width: 0
-  }
-}
-    
-@keyframes blink {
-  50% {
-    border-color: transparent
-  }
-}
-
-
-#top .alt{
-	font-size: 4rem;
-}
 #top .container {
 	color: #1E2023;
 }
