@@ -1,6 +1,4 @@
 .wrapper {
-  /* height: 100vh; */
-  /*This part is important for centering*/
   display: grid;
   place-items: center;
 }
@@ -11,7 +9,7 @@
   white-space: nowrap;
   overflow: hidden;
   border-right: 3px solid;
-  font-family: monospa/ce;
+  /* font-family: monospace; */
   font-size: 2em;
 }
 
