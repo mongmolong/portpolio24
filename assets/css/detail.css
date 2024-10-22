@@ -1,34 +1,65 @@
+#topScroll {
+	position: relative;
+	z-index: 5;
+}
+
+#topScroll a {
+	color: #666 !important;
+	transform: rotate(180deg);
+	animation: next 1s infinite alternate ease-in-out;
+}
+
+#topScroll a:hover {
+	color: #1E2023 !important;
+}
+
+@keyframes next {
+	0% {
+		transform: rotate(180deg) translateY(0px);
+	}
+
+	50% {
+		transform: rotate(180deg) translateY(-5px);
+	}
+
+	100% {
+		transform: rotate(180deg) translateY(0px);
+	}
+}
+
+/* ------------------------------------- */
 .wrapper {
-  display: grid;
-  place-items: center;
+	display: grid;
+	place-items: center;
 }
 
 .typing-demo {
-  width: 30ch;
-  animation: typing 5s steps(30), blink .5s step-end infinite alternate;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-  /* font-family: monospace; */
-  font-size: 2em;
+	width: 30ch;
+	animation: typing 5s steps(30), blink .5s step-end infinite alternate;
+	white-space: nowrap;
+	overflow: hidden;
+	border-right: 3px solid;
+	/* font-family: monospace; */
+	font-size: 2em;
 }
 
 @keyframes typing {
-  from {
-    width: 0
-  }
+	from {
+		width: 0
+	}
 }
-    
+
 @keyframes blink {
-  50% {
-    border-color: transparent
-  }
+	50% {
+		border-color: transparent
+	}
 }
 
 
-#top .alt{
+#top .alt {
 	font-size: 4rem;
 }
+
 #top .container {
 	color: #1E2023;
 }
@@ -80,7 +111,7 @@ header h1 {
 
 /* -----topUp------------------------------- */
 #top .container .topSpan01 {
-	animation: topUp01 3s infinite;
+	animation: topUp01 3s infinite ease-in-out;
 }
 
 @keyframes topUp01 {
@@ -94,7 +125,7 @@ header h1 {
 }
 
 #top .container .topSpan02 {
-	animation: topUp02 3s infinite;
+	animation: topUp02 3s infinite ease-in-out;
 }
 
 @keyframes topUp02 {
@@ -108,7 +139,7 @@ header h1 {
 }
 
 #top .container .topSpan03 {
-	animation: topUp03 3s infinite;
+	animation: topUp03 3s infinite ease-in-out;
 }
 
 @keyframes topUp03 {
@@ -122,7 +153,7 @@ header h1 {
 }
 
 #top .container .topSpan04 {
-	animation: topUp04 3s infinite;
+	animation: topUp04 3s infinite ease-in-out;
 }
 
 @keyframes topUp04 {
@@ -167,6 +198,7 @@ header h1 {
 #about_content .about_box {
 	display: grid;
 	grid-template-columns: 15rem 1fr;
+	padding: 0 1rem;
 }
 
 #about_content h1 {
@@ -187,6 +219,7 @@ header h1 {
 #about_content .skill_container span {
 	transition: all 0.3s;
 	cursor: pointer;
+	font-size: 0.9em;
 }
 
 #about_content .skill_container span:hover {
@@ -200,8 +233,81 @@ header h1 {
 
 
 /* 포트폴리오----------------------------------------- */
+#portfolio {
+	position: relative;
+	z-index: 1;
+}
+
+/* portfolioFlower01 -----------------------------*/
+#portfolio::after {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	width: 200px;
+	height: 200px;
+	content: "";
+	display: block;
+	z-index: -5;
+
+	background-image: url(../../images/flowers/green.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 200px 200px;
+	animation: portfolioFlower01 38s infinite ease-in-out;
+}
+
+@keyframes portfolioFlower01 {
+	0% {
+		transform: rotate(90deg) translate(0);
+	}
+
+	50% {
+		transform: rotate(-360deg) translate(-800px);
+	}
+
+	100% {
+		transform: rotate(90deg) translate(0);
+	}
+}
+
+/* portfolioFlower02 -----------------------------*/
+#portfolio::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 240px;
+	height: 240px;
+	content: "";
+	display: block;
+	z-index: -5;
+	border-radius: 50%;
+	background-image: url(../../images/flowers/yellow.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 220px 220px;
+	animation: portfolioFlower02 30s infinite ease-in-out;
+}
+
+@keyframes portfolioFlower02 {
+	0% {
+		transform: rotate(10deg) translate(0);
+	}
+
+	50% {
+		transform: rotate(-360deg) translate(900px);
+	}
+
+	100% {
+		transform: rotate(10deg) translate(0);
+	}
+}
+
+
+/* ------------------------------ */
 #two_row>div {
 	padding-bottom: 3rem;
+	position: relative;
+	z-index: 55;
 }
 
 #two_row div p {
@@ -217,6 +323,7 @@ header h1 {
 	background-color: transparent;
 	overflow: hidden;
 	transition: all 0.4s;
+	cursor: pointer;
 }
 
 #two_row div .item:hover {
@@ -262,6 +369,8 @@ header h1 {
 	transform: translateX(-50%) !important;
 }
 
+
+
 /* gitLink------------------------------------- */
 
 #gitLink {
@@ -272,6 +381,7 @@ header h1 {
 	display: inline-block;
 	transition: all 0.3s;
 	cursor: pointer;
+
 }
 
 #gitLink:hover span {
@@ -281,14 +391,36 @@ header h1 {
 }
 
 #gitLink a {
-	text-decoration: none;
+	text-decoration: none !important;
 	list-style: none;
+}
+
+
+
+/* flowerCutMiddle ---------------------------*/
+
+#flowerCutMiddle {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.middleFlowers {
+	width: 100%;
+	height: 100%;
 }
 
 /* always_content -----------------------------------*/
 #always {
 	position: relative;
 	z-index: 1;
+
+	background: inherit;
+	box-shadow: inset 0 -8px 20px #FFFCF2;
 }
 
 #always::after,
@@ -314,19 +446,23 @@ header h1 {
 	border-radius: 10px 10px 0 0;
 }
 
+#always_content {
+	padding: 0 1rem;
+}
+
 #always_content .always_container span {
 	transition: all 0.7s;
 	display: inline-block;
 }
 
 #always_content:hover .always_container span {
-	animation: twinkle 3s infinite;
+	animation: twinkle 3s infinite ease-in-out;
 	transform: translateX(-10px);
 }
 
 @keyframes twinkle {
 	50% {
-		color: rgb(96, 94, 94);		
+		color: rgb(96, 94, 94);
 	}
 }
 
@@ -353,84 +489,149 @@ header h1 {
 	transform: translateX(0);
 }
 
-/* 노란꽃---------------------- */
-#main>section.dark .topFlowers {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: -120px;
-	left: -20px;
-	z-index: -1;
-}
-
-#main>section.dark .topFlowers p.flower01 {
-	overflow: hidden;
-	width: 380px;
-	height: 410px;
-	border-radius: 50%;
-	animation: flowerRotate01 7s infinite ease-in-out;
-}
-#main>section.dark .topFlowers p.flower01 {
-	overflow: hidden;
-	width: 380px;
-	height: 410px;
-	border-radius: 50%;
-	animation: flowerRotate01 7s infinite ease-in-out;
-}
-#main>section.dark .topFlowers p.flower03 {
-	overflow: hidden;
-	width: 380px;
-	height: 410px;
-	border-radius: 50%;
-	animation: flowerRotate01 7s infinite ease-in-out;
-}
-#main>section.dark .topFlowers p.flower04 {
-	overflow: hidden;
-	width: 380px;
-	height: 410px;
-	border-radius: 50%;
-	animation: flowerRotate01 7s infinite ease-in-out;
-}
-
-@keyframes flowerRotate01 {
-	0% {
-		transform: rotate(-70deg);
-	}
-
-	50% {
-		transform: rotate(70deg);
-	}
-
-	100% {
-		transform: rotate(-70deg);
-	}
-
-}
-
-#main>section.dark .topFlowers .flower01 span {
-	display: block;
-	background-image: url(../../images/flowers.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: -80px -860px;
-	width: 1350px;
-	height: 1350px;
-}
 
 
-/* forFlower--------오렌지-------- */
+/*꽃밭---------------------- */
 #flowerCutTop {
 	position: absolute;
 	z-index: 2;
 	overflow: hidden;
-	width: 100%;
-	height: 200%;
-	top: -50px;
+	width: 30%;
+	height: 120%;
+	top: 0px;
 	right: 0;
 }
 
-#forFlower .topFlowers02 {
-	animation: flowerRotate02 12s infinite ease-in-out;
+#flowerCutTop .topFlowers {
+	width: 100%;
+	height: 100%;
+}
+
+
+/* ------------introFlowers-- */
+.introFlower01 {
+	position: absolute;
+	top: -100px;
+	left: -90px;
+	z-index: -1;
+
+	width: 700px;
+	height: 700px;
+	animation: flowerRotate01 20s infinite ease-in-out;
+}
+
+.introFlower02 {
+	/* display: none; */
+	position: absolute;
+	top: 50%;
+	left: 10%;
+	z-index: -1;
+	transition: all 0.3s;
+
+	width: 300px;
+	height: 300px;
+	animation: flowerRotate02 20s infinite ease-in-out;
+}
+
+.introFlower03 {
+	display: none;
+	position: absolute;
+	top: -50px;
+	left: -90px;
+	z-index: -1;
+	transition: all 0.3s;
+
+	width: 300px;
+	height: 300px;
+	animation: flowerRotate02 20s infinite ease-in-out;
+}
+
+.introFlower03 img,
+.introFlower02 img,
+.introFlower01 img {
+	width: 100%;
+	height: 100%;
+}
+
+
+
+/* 노란꽃---------------------- */
+#flowerCutTop .topFlowers .flower01 {
+	position: absolute;
+	top: -100px;
+	left: 190px;
+	z-index: -1;
+
+	width: 700px;
+	height: 700px;
+	animation: flowerRotate01 27s infinite ease-in-out;
+}
+
+#flowerCutTop .topFlowers .flower01 img {
+	width: 100%;
+	height: 100%;
+}
+
+@keyframes flowerRotate01 {
+	0% {
+		transform: rotate(-10deg) translateY(-100px);
+	}
+
+	50% {
+		transform: rotate(10deg) translateY(0px);
+	}
+
+	100% {
+		transform: rotate(-10deg) translateY(-100px);
+	}
+
+}
+
+/* 초록꽃---------------------- */
+#flowerCutTop .topFlowers .flower03 {
+	position: absolute;
+	top: 420px;
+	right: 300px;
+
+	width: 250px;
+	height: 250px;
+	animation: flowerRotate03 40s infinite ease-in-out;
+}
+
+#flowerCutTop .topFlowers .flower03 img {
+	width: 100%;
+	height: 100%;
+}
+
+@keyframes flowerRotate03 {
+	0% {
+		transform: rotate(-10deg) translateY(-50px);
+	}
+
+	50% {
+		transform: rotate(0deg) translateY(50px);
+	}
+
+	100% {
+		transform: rotate(-10deg) translateY(-50px);
+	}
+
+}
+
+/* ---------왼쪽 오렌지 */
+#flowerCutTop .topFlowers .flower02 {
+	display: none;
+	position: absolute;
+	z-index: 5;
+
+	width: 300px;
+	height: 300px;
+	animation: flowerRotate02 10s infinite ease-in-out;
+}
+
+#flowerCutTop .topFlowers .flower02 img {
+	width: 100%;
+	height: 100%;
 }
 
 @keyframes flowerRotate02 {
@@ -439,81 +640,113 @@ header h1 {
 	}
 
 	50% {
-		transform: rotate(-30deg);
+		transform: rotate(-50deg);
 	}
 
 	100% {
 		transform: rotate(30deg);
 	}
-
 }
 
-#forFlower .topFlowers02 .flower02 {
-	overflow: hidden;
-	width: 390px;
-	height: 360px;
-	border-radius: 50%;
+/* 빨간꽃---------------------- */
+#flowerCutTop .topFlowers .flower05 {
+	position: absolute;
+	right: 420px;
+	top: 140px;
+
+	width: 130px;
+	height: 130px;
+	animation: flowerRotate01 13s infinite ease-in-out;
 }
 
-#forFlower .topFlowers02 .flower02 span {
-	display: block;
-	background-image: url(../../images/flowers.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: -800px -90px;
-	width: 1250px;
-	height: 1250px;
+#flowerCutTop .topFlowers .flower04 {
+	position: absolute;
+	right: 500px;
+	top: 120px;
+
+	width: 130px;
+	height: 130px;
+	animation: flowerRotate01 19s infinite ease-in-out;
+}
+
+#flowerCutTop .topFlowers .flower05 img,
+#flowerCutTop .topFlowers .flower04 img {
+	width: 100%;
+	height: 100%;
+}
+
+/* flowerCutTop--------오렌지-------- */
+#flowerCutTop .topFlowers .flowerRight {
+	position: absolute;
+	top: 0;
+	right: -100px;
+	z-index: -1;
+	width: 500px;
+	height: 500px;
+	animation: flowerRight 14s infinite ease-in-out;
+}
+
+#flowerCutTop .topFlowers .flowerRight img {
+	width: 100%;
+	height: 100%;
+}
+
+@keyframes flowerRight {
+	0% {
+		transform: rotate(30deg) translateY(-100px);
+	}
+
+	50% {
+		transform: rotate(0deg) translateY(500px);
+	}
+
+	100% {
+		transform: rotate(30deg) translateY(-100px);
+	}
 }
 
 /* forFlower--------블루-------- */
 #flowerCutBottom {
 	position: absolute;
 	z-index: -1;
-	top: -100px;
+	top: 0;
 	right: 0;
 	width: 100%;
-	height: 120%;
+	height: 100%;
 	overflow: hidden;
 }
 
 #forFlowerBottom {
+	width: 200px;
+	height: 200px;
+}
+
+#forFlowerBottom .flowerBottom01 {
+	animation: forFlowerBottom 22s infinite ease-in-out;
+}
+
+#forFlowerBottom .flowerBottom01 img {
 	width: 100%;
 	height: 100%;
 }
 
-#forFlowerBottom .bottomFlowers {
-	animation: flowerRotate03 29s infinite ease-in-out;
-}
-
-#forFlowerBottom .bottomFlowers .flower03 {
-	overflow: hidden;
-	width: 220px;
-	height: 220px;
-	border-radius: 50%;
-
-}
-
-@keyframes flowerRotate03 {
+@keyframes forFlowerBottom {
 	0% {
-		transform: rotate(-180deg);
+		transform: rotate(360deg) translate(0);
 	}
 
 	50% {
-		transform: rotate(0deg);
+		transform: rotate(-180deg) translate(-500px);
 	}
 
 	100% {
-		transform: rotate(-180deg);
+		transform: rotate(360deg) translate(0);
 	}
-
 }
 
-#forFlowerBottom .bottomFlowers .flower03 span {
-	display: block;
-	background-image: url(../../images/flowers.png);
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: -470px -240px;
-	width: 700px;
-	height: 700px;
+#forFlowerBottom02 .flowerBottom02 {
+	margin-top: -600px;
+	margin-left: 99%;
+
+	transform: rotate(90deg);
 }
