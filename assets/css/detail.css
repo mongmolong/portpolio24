@@ -33,9 +33,13 @@
 	place-items: center;
 }
 
+.wrapper h2 {
+	font-size: 5em;
+}
+
 .typing-demo {
-	width: 30ch;
-	animation: typing 5s steps(30), blink .5s step-end infinite alternate;
+	width: 29ch;
+	animation: typing 5s steps(29), blink .5s step-end infinite alternate;
 	white-space: nowrap;
 	overflow: hidden;
 	border-right: 3px solid;
@@ -316,6 +320,10 @@ header h1 {
 	padding: 0 1rem;
 }
 
+#two_row div p:nth-child(2) {
+	padding: 1em 0;
+}
+
 /* article */
 #two_row article {
 	border-radius: 5px 80px 5px 5px;
@@ -338,6 +346,10 @@ header h1 {
 
 #two_row div .item:hover header {
 	background-color: transparent;
+}
+
+#two_row div .item:hover #apiLink {
+	color: tomato;
 }
 
 
@@ -394,8 +406,6 @@ header h1 {
 	text-decoration: none !important;
 	list-style: none;
 }
-
-
 
 /* flowerCutMiddle ---------------------------*/
 

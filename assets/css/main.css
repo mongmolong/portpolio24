@@ -2231,6 +2231,8 @@ button:active,
 	text-align: center;
 	width: 1.25em;
 	line-height: 1.75em;
+	transition: all 0.3s;
+
 }
 
 #nav ul li a.active {
@@ -2245,8 +2247,12 @@ button:active,
 	color: #fff;
 }
 
+#nav ul li:hover a span:before{
+	margin-left: 15px !important;
+}
 #nav ul li a.active span:before {
 	color: #FFE284;
+	transition: all 0.3s;
 }
 
 /* Footer */
@@ -2506,12 +2512,6 @@ button:active,
 	}
 
 
-	/* #flowerCutTop .topFlowers .flower02 {
-		display: block !important;
-		top: 17% !important;
-		left: 15% !important;
-	} */
-
 	.introFlower03 {
 		display: block !important;
 	}
@@ -2591,7 +2591,6 @@ button:active,
 	}
 
 	/* Footer */
-
 	#footer {
 		margin-left: 20%;
 	}
@@ -2805,10 +2804,6 @@ button:active,
 
 	#main>section {
 		padding: 3em 0;
-	}
-
-	#main section.cover {
-		/* padding: 4em 0; */
 	}
 
 	.wrapper h2 span {
