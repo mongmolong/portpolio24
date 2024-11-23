@@ -321,12 +321,13 @@ header h1 {
 }
 
 #two_row div p:nth-child(2) {
-	padding: 1em 0;
+	padding: 0.7rem 1em;
 }
 
 /* article */
 #two_row article {
 	border-radius: 5px 80px 5px 5px;
+	border-radius: 5px;
 	min-height: 51%;
 	background-color: transparent;
 	overflow: hidden;
@@ -335,9 +336,9 @@ header h1 {
 }
 
 #two_row div .item:hover {
-	background: #fff;
-	box-shadow: 5px 5px 10px rgba(231, 231, 231, 0.375);
+	box-shadow: 2px 2px 5px rgba(231, 231, 231, 0.375);
 	transform: translateY(-5px);
+	background-color: #ffff;
 }
 
 #two_row div .item:hover header h2 {
@@ -351,12 +352,9 @@ header h1 {
 #two_row div .item:hover #apiLink {
 	color: tomato;
 }
-
-
 #two_row div .item .img_cut {
 	height: 350px;
 	overflow: hidden;
-	border-radius: 0 80px 0 0;
 }
 
 #two_row div .item .img_cut img {
@@ -383,28 +381,32 @@ header h1 {
 
 
 
-/* gitLink------------------------------------- */
-
+/* gitLink---gitPage---------------------------------- */
+#gitPage,
 #gitLink {
+	display: inline-block;
 	width: 100%;
 }
 
+#gitPage span,
 #gitLink span {
 	display: inline-block;
-	transition: all 0.3s;
+	transition: all 0.1s;
 	cursor: pointer;
-
+	display: inline-block;
 }
 
+#gitPage:hover span,
 #gitLink:hover span {
-	transform: translateX(10px);
+	margin-left: 20px;
 	font-style: italic;
 	color: tomato;
 }
 
+#gitPage a,
 #gitLink a {
 	text-decoration: none !important;
-	list-style: none;
+	list-style: none !important;
 }
 
 /* flowerCutMiddle ---------------------------*/
